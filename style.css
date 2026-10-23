@@ -276,3 +276,53 @@ textarea:focus{border-color:rgba(78,135,203,.55);box-shadow:0 0 0 4px rgba(91,14
   background:#deeffb;
   border-color:rgba(78,135,203,.32);
 }
+
+
+/* =========================================================
+   CENTRADO REAL EN MÓVIL
+   ========================================================= */
+html,
+body,
+.app-shell,
+.screen {
+  width: 100%;
+  max-width: 100%;
+}
+
+.rating-screen.active,
+.reviews-screen.active,
+.thanks-screen.active {
+  width: 100%;
+  box-sizing: border-box;
+  justify-items: center;
+  align-items: center;
+}
+
+.rating-card,
+.reviews-section,
+.thanks-card {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (max-width: 700px) {
+  .rating-screen.active,
+  .reviews-screen.active,
+  .thanks-screen.active {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .rating-card,
+  .reviews-section,
+  .thanks-card {
+    width: calc(100vw - 32px) !important;
+    max-width: calc(100vw - 32px) !important;
+    margin-inline: auto !important;
+  }
+
+  .reviews-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
