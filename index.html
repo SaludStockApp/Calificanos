@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#dff0ff" />
+  <title>Califica tu experiencia</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <main class="app-shell">
+    <section id="intro" class="screen intro-screen active" aria-label="Bienvenida">
+      <div class="intro-content">
+        <div class="logo-wrap intro-logo-wrap">
+          <img src="logo.jpeg" alt="Logo temporal" class="logo-image" />
+        </div>
+
+        <div class="intro-copy">
+          <span class="eyebrow">TU OPINIÓN IMPORTA</span>
+          <h1>Queremos saber<br />cómo te fue 💙</h1>
+          <p>Tu experiencia nos ayuda a seguir mejorando.</p>
+        </div>
+
+        <div class="loading-line" aria-hidden="true">
+          <span></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="ratingScreen" class="screen rating-screen" aria-label="Calificación del servicio">
+      <div class="rating-card">
+        <div class="card-top">
+          <div class="mini-logo">
+            <img src="logo.jpeg" alt="" />
+          </div>
+
+          <div>
+            <span class="eyebrow">CUÉNTANOS</span>
+            <h2>¿Cómo fue tu experiencia?</h2>
+            <p>Selecciona una calificación de 1 a 5 estrellas.</p>
+          </div>
+        </div>
+
+        <div class="stars-block">
+          <div id="stars" class="stars" role="radiogroup" aria-label="Calificación">
+            <button class="star" type="button" data-value="1" aria-label="1 estrella">★</button>
+            <button class="star" type="button" data-value="2" aria-label="2 estrellas">★</button>
+            <button class="star" type="button" data-value="3" aria-label="3 estrellas">★</button>
+            <button class="star" type="button" data-value="4" aria-label="4 estrellas">★</button>
+            <button class="star" type="button" data-value="5" aria-label="5 estrellas">★</button>
+          </div>
+
+          <div class="rating-status">
+            <strong id="ratingLabel">Toca una estrella</strong>
+            <span id="ratingHint">Queremos conocer tu opinión.</span>
+          </div>
+        </div>
+
+        <div class="comment-area">
+          <label for="comment">¿Quieres contarnos algo más?</label>
+          <span class="optional">Opcional</span>
+          <textarea id="comment" maxlength="600" placeholder="Escribe aquí tu comentario..."></textarea>
+          <div class="comment-footer">
+            <span>Gracias por ayudarnos a mejorar ✨</span>
+            <span id="charCount">0/600</span>
+          </div>
+        </div>
+
+        <button id="submitBtn" class="submit-btn" type="button" disabled>
+          <span id="submitText">Enviar calificación</span>
+          <span class="submit-arrow">→</span>
+        </button>
+
+        <button id="openReviewsBtn" class="reviews-direct-btn" type="button">
+          Ver comentarios
+        </button>
+
+        <p id="formMessage" class="form-message" aria-live="polite"></p>
+      </div>
+
+    </section>
+
+    <section id="reviewsScreen" class="screen reviews-screen" aria-label="Opiniones de nuestros usuarios">
+      <div class="reviews-section">
+        <div class="reviews-topbar">
+          <button id="backToRatingBtn" class="back-btn" type="button">← Volver</button>
+        </div>
+
+        <div class="reviews-heading">
+          <div>
+            <span class="eyebrow">EXPERIENCIAS REALES</span>
+            <h2 id="reviewsTitle">Lo que opinan nuestros usuarios 💙</h2>
+            <p>Las calificaciones ayudan a mostrar cómo ha sido la experiencia de quienes ya nos visitaron.</p>
+          </div>
+
+          <div class="review-summary-card">
+            <div class="summary-score">
+              <strong id="averageRating">—</strong>
+              <span>/ 5</span>
+            </div>
+            <div>
+              <div id="averageStars" class="summary-stars">☆☆☆☆☆</div>
+              <span id="totalReviews" class="summary-count">Cargando opiniones...</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="reviewsGrid" class="reviews-grid">
+          <div class="reviews-loading">Cargando reseñas…</div>
+        </div>
+
+        <button id="showMoreReviews" class="reviews-more" type="button" hidden>
+          Ver más opiniones
+        </button>
+
+        <div class="reviews-bottom-actions">
+          <button id="rateFromReviewsBtn" class="secondary-btn" type="button">
+            Enviar una calificación
+          </button>
+        </div>
+
+        <p class="reviews-note">
+          Los comentarios se publican después de una revisión para proteger la privacidad de nuestros usuarios.
+        </p>
+      </div>
+    </section>
+
+    <section id="thanksScreen" class="screen thanks-screen" aria-label="Agradecimiento">
+      <div class="thanks-card">
+        <div class="success-orbit">
+          <div class="success-check">✓</div>
+        </div>
+
+        <span class="eyebrow">¡RECIBIDO!</span>
+        <h2 id="thanksTitle">¡Muchas gracias! 💙</h2>
+        <p id="thanksText">Tu opinión nos ayuda muchísimo a seguir mejorando.</p>
+
+        <div class="thanks-actions">
+          <button id="viewReviewsBtn" class="secondary-btn reviews-btn" type="button">
+            Ver otros comentarios
+          </button>
+          <button id="resetBtn" class="secondary-btn" type="button">
+            Enviar otra
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>
